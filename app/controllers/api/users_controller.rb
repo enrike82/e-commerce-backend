@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  skip_before_action :authenticate_request, only: [:create]
   before_action :set_api_user, only: [:show, :update, :destroy]
 
   # GET /api/users
@@ -46,6 +47,6 @@ class Api::UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def api_user_params
-      params.require(:api_user).permit(:name, :email, :password_digest)
+      params.require(:api_user).permit(:name, :email, :password, :password_confirmation)
     end
 end
