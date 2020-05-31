@@ -1,24 +1,16 @@
-# README
+# e-commerce-backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este proyecto hace parte del [proyecto e-commerce](https://github.com/users/davidauza-engineer/projects/1) realizado para la materia Desarrollo de Software en Equipo TSP del Politécnico Grancolombiano.
 
-Things you may want to cover:
+El presente repositorio contiene un proyecto realizado en Ruby on Rails, que sirve como API para el proyecto descrito.
 
-* Ruby version
+Se implementaron los siguientes módulos:
 
-* System dependencies
+## Módulo de registro
 
-* Configuration
+Se implementó un API que responde de la siguiente manera:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| Ruta | Método | Parámetros | Efecto |
+-------|--------|------------|--------|
+https://ecommercetsp.herokuapp.com/api/users | POST | {"api_user":{"name":"James Bond","email":"jbond@mi6.org","password":"vesper","password_confirmation":"vesper"}} | Con los parámetros adecuados crea un nuevo usuario. |
+https://ecommercetsp.herokuapp.com/api/authenticate | POST | {"email":"jbond@mi6.org","password":"vesper"} | Con credenciales válidas devuelve un JSON Web Token usado para autenticar al usuario.
