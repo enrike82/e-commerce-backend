@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     resources :users
     post 'authenticate', to: 'authentication#authenticate'
+    resources :products
   end
 end
