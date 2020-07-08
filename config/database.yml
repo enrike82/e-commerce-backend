@@ -20,12 +20,11 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: e-commerce-backend
-  password: <%= ENV['E_COMMERCE_BACKEND_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
   database: e_commerce_backend_development
+  
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,7 +58,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: e_commerce_backend_test
+#  database: e_commerce_backend_test
+  host: ec2-35-172-73-125.compute-1.amazonaws.com
+  database: dbq640o1g53lu5
+  user: wkkjbrumlqxxyf
+  port: 5432
+  password: a2e6145e6b755c99cc28036a6d5d38a9e9f16b952237b56f2e3f25efbbb95717
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
